@@ -85,85 +85,61 @@ export default function App() {
                 <img src="/hero.png" alt="Hero" className="w-full h-auto object-cover" />
               </div>
               <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[240px] hidden md:block">
-                <div className="flex items-center gap-1 mb-3">
-                  {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
-                </div>
-                <p className="text-sm font-bold text-slate-800 italic leading-tight">"Mudança de vida, assim que classifico."</p>
-                <p className="text-xs text-slate-500 mt-2">- Marta Solange Silva</p>
+                {/* HERO SECTION */}
+      <section className="relative pt-32 pb-20 lg:pt-56 lg:pb-40 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/80 to-white" />
+          <div className="absolute top-0 right-0 w-2/3 h-full bg-emerald-100/20 rounded-l-[200px] -z-10 transform translate-x-40" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-emerald-800 uppercase bg-emerald-100/80 rounded-full border border-emerald-200">
+                <MapPin className="w-3.5 h-3.5" />
+                Estúdio de Pilates em Rio Preto
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-6">
+                Pilates <br />
+                <span className="text-[#2D8A4E]">Gabriela Garcia</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+                Recupere sua qualidade de vida, alivie dores e fortaleça seu corpo no melhor <span className="font-bold text-slate-800">Estúdio de Pilates em São José do Rio Preto</span>.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-2xl shadow-green-200 group"
+                >
+                  <MessageCircle className="w-7 h-7" />
+                  Agende sua aula experimental!
+                  <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* SOBRE A PROFISSIONAL */}
-      <section id="sobre" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
-              <img src="/profissional.png" alt="fisioterapeuta Gabriela" className="w-full h-full object-cover" />
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Conheça a <span className="text-emerald-600">fisioterapeuta Gabriela Garcia Bezerra</span></h2>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">Com uma abordagem humanizada e focada no bem-estar integral, a fisioterapeuta Gabriela combina anos de formação especializada com um atendimento próximo e individualizado.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                {[
-                  "Graduada em Fisioterapia (UNIP)",
-                  "Formação em Pilates (FISIONET)",
-                  "Anatomia Palpatória (EBRAFIM)",
-                  "Liberação Miofascial",
-                  "Drenagem Linfática",
-                  "Pilates Fitness"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                    <span className="text-slate-700 font-medium">{item}</span>
-                  </div>
-                ))}
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative rounded-[60px] overflow-hidden shadow-2xl border-[12px] border-white bg-slate-100">
+                <img 
+                  src="/hero.png" 
+                  alt="Estúdio de Pilates Gabriela Garcia" 
+                  className="w-full h-auto object-cover brightness-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
               </div>
-              <div className="p-6 bg-emerald-50 rounded-3xl border border-emerald-100 italic text-emerald-800 font-semibold">
-                "Meu objetivo é transformar vidas através do movimento consciente, respeitando os limites de cada corpo."
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* BENEFÍCIOS */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Por que escolher nosso Pilates?</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "Alívio de Dores", desc: "Tratamento eficaz para dores lombares e articulares.", icon: <Zap className="w-6 h-6" /> },
-              { title: "Correção Postural", desc: "Melhore sua postura e previna cansaço muscular.", icon: <Award className="w-6 h-6" /> },
-              { title: "Fortalecimento", desc: "Desenvolva músculos fortes sem impacto agressivo.", icon: <Users className="w-6 h-6" /> },
-              { title: "Gestantes", desc: "Acompanhamento seguro para uma gestação saudável.", icon: <Heart className="w-6 h-6" /> },
-              { title: "Reabilitação", desc: "Recuperação de lesões com protocolos integrados.", icon: <CheckCircle2 className="w-6 h-6" /> },
-              { title: "Flexibilidade", desc: "Aumente sua amplitude de movimento e agilidade.", icon: <ChevronRight className="w-6 h-6" /> }
-            ].map((benefit, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition-all border border-slate-100">
-                <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600">{benefit.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                <p className="text-slate-600">{benefit.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DEPOIMENTOS */}
-      <section className="py-24 bg-emerald-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16">O que dizem nossos alunos</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { text: "Excelente estúdio, com ótimas aulas. Minha postura corporal mudou completamente.", author: "Evany Camargo" },
-              { text: "Minhas dores acabaram. Profissionalismo dez, ambiente 10. Adoro as aulas.", author: "Marta Solange Silva" },
-              { text: "Estou fazendo pilates para gestantes e está sendo ótimo, recomendo!", author: "Jennifer Camilla" }
-            ].map((t, i) => (
+              
               {/* Floating Badge */}
               <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-white p-4 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[180px] md:max-w-[240px] z-20">
                 <div className="flex items-center gap-0.5 md:gap-1 mb-2 md:mb-3">
@@ -171,11 +147,11 @@ export default function App() {
                 </div>
                 <p className="text-xs md:text-base font-bold text-slate-800 italic leading-tight">"Mudança de vida, assim que classifico."</p>
                 <p className="text-[10px] md:text-sm text-slate-500 mt-1 md:mt-2 font-medium">- Marta Solange Silva</p>
-              </div><div key={i} className="bg-white/10 p-8 rounded-[2.5rem] border border-white/10 italic">
-                <div className="flex justify-center gap-1 mb-4">
-                  {[1,2,3,4,5].map(star => <Star key={star} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
-                </div>
-                <p className="mb-6">"{t.text}"</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
                 <p className="font-bold text-emerald-300">- {t.author}</p>
               </div>
             ))}
