@@ -64,7 +64,10 @@ export default function App() {
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-emerald-800 uppercase bg-emerald-100/80 rounded-full border border-emerald-200">
                 <MapPin className="w-3.5 h-3.5" /> Estúdio de Pilates em Rio Preto
-              </div>
+              <div className="flex flex-col">
+              <p className="font-bold text-slate-800 text-[10px] sm:text-sm leading-tight">Agende sua aula experimental</p>
+              <p className="text-[9px] sm:text-xs text-slate-500">Pilates em Rio Preto</p>
+            </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-6">
                 Pilates <br /> <span className="text-[#2D8A4E]">Gabriela Garcia</span>
               </h1>
