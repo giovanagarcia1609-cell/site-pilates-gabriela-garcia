@@ -40,9 +40,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src="/logo2.png" alt="Logo" className="h-10 md:h-14 w-auto" />
-            <div className="hidden md:block">
-              <p className="font-bold text-slate-800 text-sm leading-tight">Agende sua aula experimental</p>
-              <p className="text-xs text-slate-500">Pilates em Rio Preto</p>
+            <div className="flex flex-col">
+              <p className="font-bold text-slate-800 text-[10px] sm:text-sm leading-tight">Agende sua aula experimental</p>
+              <p className="text-[9px] sm:text-xs text-slate-500">Pilates em Rio Preto</p>
             </div>
           </div>
           <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#128C7E] text-white px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 transition-all transform hover:scale-105 shadow-lg">
@@ -54,20 +54,12 @@ export default function App() {
 
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-56 lg:pb-40 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/80 to-white" />
-          <div className="absolute top-0 right-0 w-2/3 h-full bg-emerald-100/20 rounded-l-[200px] -z-10 transform translate-x-40" />
-        </div>
-        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-emerald-800 uppercase bg-emerald-100/80 rounded-full border border-emerald-200">
                 <MapPin className="w-3.5 h-3.5" /> Estúdio de Pilates em Rio Preto
-              <div className="flex flex-col">
-              <p className="font-bold text-slate-800 text-[10px] sm:text-sm leading-tight">Agende sua aula experimental</p>
-              <p className="text-[9px] sm:text-xs text-slate-500">Pilates em Rio Preto</p>
-            </div>
+              </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-6">
                 Pilates <br /> <span className="text-[#2D8A4E]">Gabriela Garcia</span>
               </h1>
@@ -76,7 +68,6 @@ export default function App() {
               </p>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-2xl group">
                 <MessageCircle className="w-7 h-7" /> Agende sua aula experimental!
-                <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </a>
             </motion.div>
             
@@ -84,63 +75,8 @@ export default function App() {
               <div className="relative rounded-[60px] overflow-hidden shadow-2xl border-[12px] border-white bg-slate-100">
                 <img src="/hero.png" alt="Hero" className="w-full h-auto object-cover" />
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[240px] hidden md:block">
-                {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 lg:pt-56 lg:pb-40 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/80 to-white" />
-          <div className="absolute top-0 right-0 w-2/3 h-full bg-emerald-100/20 rounded-l-[200px] -z-10 transform translate-x-40" />
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-emerald-800 uppercase bg-emerald-100/80 rounded-full border border-emerald-200">
-                <MapPin className="w-3.5 h-3.5" />
-                Estúdio de Pilates em Rio Preto
-              </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-6">
-                Pilates <br />
-                <span className="text-[#2D8A4E]">Gabriela Garcia</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                Recupere sua qualidade de vida, alivie dores e fortaleça seu corpo no melhor <span className="font-bold text-slate-800">Estúdio de Pilates em São José do Rio Preto</span>.
-              </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-2xl shadow-green-200 group"
-                >
-                  <MessageCircle className="w-7 h-7" />
-                  Agende sua aula experimental!
-                  <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative rounded-[60px] overflow-hidden shadow-2xl border-[12px] border-white bg-slate-100">
-                <img 
-                  src="/hero.png" 
-                  alt="Estúdio de Pilates Gabriela Garcia" 
-                  className="w-full h-auto object-cover brightness-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
-              </div>
-              
-              {/* Floating Badge */}
+              {/* Balão de Avaliação (Ajustado para Mobile) */}
               <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-white p-4 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[180px] md:max-w-[240px] z-20">
                 <div className="flex items-center gap-0.5 md:gap-1 mb-2 md:mb-3">
                   {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />)}
@@ -152,6 +88,64 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* SEÇÃO SOBRE */}
+      <section id="sobre" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
+              <img src="/profissional.png" alt="fisioterapeuta Gabriela" className="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Conheça a <span className="text-emerald-600">fisioterapeuta Gabriela Garcia Bezerra</span></h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">Com uma abordagem humanizada e focada no bem-estar integral, a fisioterapeuta Gabriela combina anos de formação especializada com um atendimento próximo e individualizado.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                {["Graduada em Fisioterapia (UNIP)", "Formação em Pilates (FISIONET)", "Especialista em Reabilitação", "Liberação Miofascial", "Drenagem Linfática", "Pilates Fitness"].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                    <span className="text-slate-700 font-medium text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BENEFÍCIOS */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Por que escolher nosso Pilates?</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "Alívio de Dores", desc: "Tratamento eficaz para dores lombares e articulares.", icon: <Zap /> },
+              { title: "Correção Postural", desc: "Melhore sua postura e previna cansaço muscular.", icon: <Award /> },
+              { title: "Fortalecimento", desc: "Desenvolva músculos fortes sem impacto agressivo.", icon: <Users /> }
+            ].map((benefit, idx) => (
+              <div key={idx} className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
+                <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600">{benefit.icon}</div>
+                <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
+                <p className="text-slate-600">{benefit.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DEPOIMENTOS */}
+      <section className="py-24 bg-emerald-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16">O que dizem nossos alunos</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { text: "Excelente estúdio, com ótimas aulas. Minha postura corporal mudou completamente.", author: "Evany Camargo" },
+              { text: "Minhas dores acabaram. Profissionalismo dez, ambiente 10. Adoro as aulas.", author: "Marta Solange Silva" },
+              { text: "Estou fazendo pilates para gestantes e está sendo ótimo, recomendo!", author: "Jennifer Camilla" }
+            ].map((t, i) => (
+              <div key={i} className="bg-white/10 p-8 rounded-[2.5rem] border border-white/10 italic">
+                <p className="mb-6">"{t.text}"</p>
                 <p className="font-bold text-emerald-300">- {t.author}</p>
               </div>
             ))}
@@ -178,19 +172,13 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="py-12 bg-slate-900 text-slate-400 text-center">
-        <div className="max-w-7xl mx-auto px-4">
-          <p className="text-white font-bold text-xl mb-2">Pilates Gabriela Garcia Bezerra</p>
-          <p className="mb-6">{ADDRESS}</p>
-          <div className="flex justify-center gap-8 mb-8">
-            <a href="https://www.instagram.com/fisiogabrielagarcia/" target="_blank" className="flex items-center gap-2 hover:text-pink-500 transition-colors">
-              <Instagram /> <span>Instagram</span>
-            </a>
-            <a href="https://www.facebook.com/fisiogabrielagarcia" target="_blank" className="flex items-center gap-2 hover:text-blue-500 transition-colors">
-              <Facebook /> <span>Facebook</span>
-            </a>
-          </div>
-          <p className="text-sm">© 2026 Todos os direitos reservados.</p>
+        <p className="text-white font-bold text-xl mb-2">Pilates Gabriela Garcia Bezerra</p>
+        <p className="mb-6">{ADDRESS}</p>
+        <div className="flex justify-center gap-8 mb-8">
+          <a href="https://www.instagram.com/fisiogabrielagarcia/" target="_blank" className="hover:text-pink-500 flex items-center gap-2"><Instagram /> Instagram</a>
+          <a href="https://www.facebook.com/fisiogabrielagarcia" target="_blank" className="hover:text-blue-500 flex items-center gap-2"><Facebook /> Facebook</a>
         </div>
+        <p className="text-sm">© 2026 Todos os direitos reservados.</p>
       </footer>
 
     </div>
