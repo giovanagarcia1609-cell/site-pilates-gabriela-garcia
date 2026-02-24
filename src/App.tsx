@@ -35,7 +35,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#F9FAF8] font-sans text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
       
-      {/* HEADER */}
+      {/* HEADER FIXO */}
       <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-white py-4 shadow-sm'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -54,6 +54,11 @@ export default function App() {
 
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-56 lg:pb-40 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/80 to-white" />
+          <div className="absolute top-0 right-0 w-2/3 h-full bg-emerald-100/20 rounded-l-[200px] -z-10 transform translate-x-40" />
+        </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -68,11 +73,20 @@ export default function App() {
               </p>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-2xl group">
                 <MessageCircle className="w-7 h-7" /> Agende sua aula experimental!
+                <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </a>
             </motion.div>
+            
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative">
               <div className="relative rounded-[60px] overflow-hidden shadow-2xl border-[12px] border-white bg-slate-100">
                 <img src="/hero.png" alt="Hero" className="w-full h-auto object-cover" />
+              </div>
+              <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[240px] hidden md:block">
+                <div className="flex items-center gap-1 mb-3">
+                  {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                </div>
+                <p className="text-sm font-bold text-slate-800 italic leading-tight">"Mudança de vida, assim que classifico."</p>
+                <p className="text-xs text-slate-500 mt-2">- Marta Solange Silva</p>
               </div>
             </motion.div>
           </div>
@@ -89,13 +103,23 @@ export default function App() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Conheça a <span className="text-emerald-600">fisioterapeuta Gabriela Garcia Bezerra</span></h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">Com uma abordagem humanizada e focada no bem-estar integral, a fisioterapeuta Gabriela combina anos de formação especializada com um atendimento próximo e individualizado.</p>
-              <div className="space-y-3 mb-10">
-                {["Graduada em Fisioterapia (UNIP)", "Formação em Pilates (FISIONET)", "Especialista em Reabilitação Física"].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                {[
+                  "Graduada em Fisioterapia (UNIP)",
+                  "Formação em Pilates (FISIONET)",
+                  "Anatomia Palpatória (EBRAFIM)",
+                  "Liberação Miofascial",
+                  "Drenagem Linfática",
+                  "Pilates Fitness"
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                     <span className="text-slate-700 font-medium">{item}</span>
                   </div>
                 ))}
+              </div>
+              <div className="p-6 bg-emerald-50 rounded-3xl border border-emerald-100 italic text-emerald-800 font-semibold">
+                "Meu objetivo é transformar vidas através do movimento consciente, respeitando os limites de cada corpo."
               </div>
             </div>
           </div>
@@ -110,11 +134,14 @@ export default function App() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Alívio de Dores", desc: "Tratamento eficaz para dores lombares e articulares.", icon: <Zap /> },
-              { title: "Correção Postural", desc: "Melhore sua postura e previna cansaço muscular.", icon: <Award /> },
-              { title: "Fortalecimento", desc: "Desenvolva músculos fortes sem impacto agressivo.", icon: <Users /> }
+              { title: "Alívio de Dores", desc: "Tratamento eficaz para dores lombares e articulares.", icon: <Zap className="w-6 h-6" /> },
+              { title: "Correção Postural", desc: "Melhore sua postura e previna cansaço muscular.", icon: <Award className="w-6 h-6" /> },
+              { title: "Fortalecimento", desc: "Desenvolva músculos fortes sem impacto agressivo.", icon: <Users className="w-6 h-6" /> },
+              { title: "Gestantes", desc: "Acompanhamento seguro para uma gestação saudável.", icon: <Heart className="w-6 h-6" /> },
+              { title: "Reabilitação", desc: "Recuperação de lesões com protocolos integrados.", icon: <CheckCircle2 className="w-6 h-6" /> },
+              { title: "Flexibilidade", desc: "Aumente sua amplitude de movimento e agilidade.", icon: <ChevronRight className="w-6 h-6" /> }
             ].map((benefit, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
+              <div key={idx} className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition-all border border-slate-100">
                 <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600">{benefit.icon}</div>
                 <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
                 <p className="text-slate-600">{benefit.desc}</p>
@@ -130,11 +157,14 @@ export default function App() {
           <h2 className="text-3xl md:text-4xl font-bold mb-16">O que dizem nossos alunos</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { text: "Minha postura mudou completamente.", author: "Evany Camargo" },
-              { text: "Minhas dores acabaram. Profissionalismo dez.", author: "Marta Solange Silva" },
-              { text: "Pilates para gestantes está sendo ótimo!", author: "Jennifer Camilla" }
+              { text: "Excelente estúdio, com ótimas aulas. Minha postura corporal mudou completamente.", author: "Evany Camargo" },
+              { text: "Minhas dores acabaram. Profissionalismo dez, ambiente 10. Adoro as aulas.", author: "Marta Solange Silva" },
+              { text: "Estou fazendo pilates para gestantes e está sendo ótimo, recomendo!", author: "Jennifer Camilla" }
             ].map((t, i) => (
               <div key={i} className="bg-white/10 p-8 rounded-[2.5rem] border border-white/10 italic">
+                <div className="flex justify-center gap-1 mb-4">
+                  {[1,2,3,4,5].map(star => <Star key={star} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                </div>
                 <p className="mb-6">"{t.text}"</p>
                 <p className="font-bold text-emerald-300">- {t.author}</p>
               </div>
@@ -143,24 +173,37 @@ export default function App() {
         </div>
       </section>
 
-      {/* MAPA E CONTATO */}
+      {/* VÍDEOS E ESPAÇO */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-12">Onde estamos</h2>
+          <h2 className="text-3xl font-bold mb-12">Conheça nosso espaço</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {[1, 2, 3].map((v) => (
+              <div key={v} className="rounded-3xl overflow-hidden shadow-xl aspect-[9/16] bg-slate-200">
+                <video src={`/video${v}.mp4`} className="w-full h-full object-cover" autoPlay muted loop playsInline />
+              </div>
+            ))}
+          </div>
           <div className="rounded-[3rem] overflow-hidden shadow-2xl h-[400px] border-8 border-white">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.837854654924!2d-49.3667144247501!3d-20.797539980791485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdad788888888b%3A0x8888888888888888!2sRua%20Jos%C3%A9%20Marcelo%2C%20762%20-%20Caparroz%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"></iframe>
           </div>
-          <p className="mt-8 font-bold text-lg">{ADDRESS}</p>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer className="py-12 bg-slate-900 text-slate-400 text-center">
-        <p className="text-white font-bold mb-2">Pilates Gabriela Garcia Bezerra</p>
-        <p>© 2026 Todos os direitos reservados.</p>
-        <div className="flex justify-center gap-6 mt-6">
-          <a href="https://www.instagram.com/fisiogabrielagarcia/" target="_blank" className="hover:text-pink-500"><Instagram /></a>
-          <a href="https://www.facebook.com/fisiogabrielagarcia" target="_blank" className="hover:text-blue-500"><Facebook /></a>
+        <div className="max-w-7xl mx-auto px-4">
+          <p className="text-white font-bold text-xl mb-2">Pilates Gabriela Garcia Bezerra</p>
+          <p className="mb-6">{ADDRESS}</p>
+          <div className="flex justify-center gap-8 mb-8">
+            <a href="https://www.instagram.com/fisiogabrielagarcia/" target="_blank" className="flex items-center gap-2 hover:text-pink-500 transition-colors">
+              <Instagram /> <span>Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/fisiogabrielagarcia" target="_blank" className="flex items-center gap-2 hover:text-blue-500 transition-colors">
+              <Facebook /> <span>Facebook</span>
+            </a>
+          </div>
+          <p className="text-sm">© 2026 Todos os direitos reservados.</p>
         </div>
       </footer>
 
