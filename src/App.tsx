@@ -164,7 +164,14 @@ export default function App() {
               { text: "Minhas dores acabaram. Profissionalismo dez, ambiente 10. Adoro as aulas.", author: "Marta Solange Silva" },
               { text: "Estou fazendo pilates para gestantes e está sendo ótimo, recomendo!", author: "Jennifer Camilla" }
             ].map((t, i) => (
-              <div key={i} className="bg-white/10 p-8 rounded-[2.5rem] border border-white/10 italic">
+              {/* Floating Badge */}
+              <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-white p-4 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[180px] md:max-w-[240px] z-20">
+                <div className="flex items-center gap-0.5 md:gap-1 mb-2 md:mb-3">
+                  {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />)}
+                </div>
+                <p className="text-xs md:text-base font-bold text-slate-800 italic leading-tight">"Mudança de vida, assim que classifico."</p>
+                <p className="text-[10px] md:text-sm text-slate-500 mt-1 md:mt-2 font-medium">- Marta Solange Silva</p>
+              </div><div key={i} className="bg-white/10 p-8 rounded-[2.5rem] border border-white/10 italic">
                 <div className="flex justify-center gap-1 mb-4">
                   {[1,2,3,4,5].map(star => <Star key={star} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                 </div>
