@@ -20,7 +20,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#F9FAF8] font-sans text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
       
-      {/* HEADER */}
+      {/* HEADER FIXO */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-white py-4 shadow-sm'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -81,7 +81,7 @@ export default function App() {
               <div className="relative rounded-[60px] overflow-hidden shadow-2xl border-[12px] border-white bg-slate-100">
                 <img src="/hero.png" alt="Pilates" className="w-full h-auto object-cover" onError={(e) => { (e.target as HTMLImageElement).src = "https://picsum.photos/seed/pilates-hero/1200/800"; }} />
               </div>
-              <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-white p-4 md:p-8 rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[180px] md:max-w-[240px] z-20">
+              <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-white p-4 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[180px] md:max-w-[240px] z-20">
                 <div className="flex items-center gap-1 mb-2">
                   {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />)}
                 </div>
@@ -93,8 +93,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* SOBRE A PROFISSIONAL */}
-      <section className="py-24 bg-white">
+      {/* SOBRE A PROFISSIONAL (COM CURSOS COMPLETOS) */}
+      <section id="sobre" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
@@ -104,7 +104,18 @@ export default function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Conheça a <span className="text-emerald-600">fisioterapeuta Gabriela Garcia Bezerra</span></h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">Com uma abordagem humanizada e focada no bem-estar integral, a Dra. Gabriela combina anos de formação especializada com um atendimento individualizado.</p>
               <div className="space-y-3 mb-10">
-                {["Graduada em Fisioterapia - UNIP (2018)", "Formação em Pilates - FISIONET (2019)", "Especialista em Disfunções Posturais", "Imersão em Pilates Clínico e Fitness"].map((item, idx) => (
+                {[
+                  "Graduada em Fisioterapia pela Universidade Paulista - UNIP (2018)",
+                  "Formação em Pilates - FISIONET (2019)",
+                  "Curso de Anatomia Palpatória - EBRAFIM (2019)",
+                  "Curso de Crochetagem Miofascial - EBRAFIM (2019)",
+                  "Curso de Liberação Miofascial e Ventosaterapia (2019)",
+                  "Curso de Drenagem Linfática Manual (2019)",
+                  "Curso de Massagem na Fisioterapia (2019)",
+                  "Disfunções Posturais com ênfase na Escoliose (2020)",
+                  "Imersão em Pilates com Adriana Coldebella (2021)",
+                  "Pilates Fitness método Amanda Louise (2022)"
+                ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-1" />
                     <span className="text-slate-700 text-sm font-medium">{item}</span>
@@ -112,7 +123,7 @@ export default function App() {
                 ))}
               </div>
               <div className="p-6 bg-emerald-50 rounded-3xl border border-emerald-100">
-                <p className="text-emerald-800 font-semibold italic">"Meu objetivo é transformar vidas através do movimento consciente."</p>
+                <p className="text-emerald-800 font-semibold italic">"Meu objetivo é transformar vidas através do movimento consciente, oferecendo um acompanhamento que respeita os limites e potencializa os resultados de cada corpo."</p>
               </div>
             </div>
           </div>
@@ -154,7 +165,37 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONHEÇA NOSSO ESPAÇO */}
+      {/* DEPOIMENTOS (RESTAURADOS) */}
+      <section className="py-24 bg-emerald-900 text-white overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-emerald-300 font-bold tracking-widest uppercase text-sm">O que dizem nossos alunos</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-4">Histórias de Transformação</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { text: "Excelente estúdio, com ótimas aulas. Minha postura corporal mudou completamente e me sinto muito bem.", author: "Evany Camargo" },
+              { text: "Mudança de vida, assim que classifico. Eu vivia com dores lombar, Cervical e depois que comecei fazer minhas dores acabaram.", author: "Marta Solange Silva" },
+              { text: "Ótima profissional e super educada. Estou fazendo pilates para gestantes e está sendo ótimo, recomendo!", author: "Jennifer Camilla" }
+            ].map((testimonial, idx) => (
+              <div key={idx} className="bg-white/10 backdrop-blur-sm p-8 rounded-[2.5rem] border border-white/10 flex flex-col justify-between">
+                <div>
+                  <div className="flex gap-1 mb-6">
+                    {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
+                  </div>
+                  <p className="text-lg leading-relaxed italic mb-8">"{testimonial.text}"</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-emerald-700 rounded-full flex items-center justify-center font-bold text-xl">{testimonial.author[0]}</div>
+                  <span className="font-bold text-emerald-200">{testimonial.author}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONHEÇA NOSSO ESPAÇO (VÍDEOS E MAPA) */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -182,6 +223,7 @@ export default function App() {
                   <ul className="space-y-3 text-slate-600 text-lg">
                     <li className="flex justify-between"><span className="font-medium">Segunda a Quinta:</span><span>07:00 às 19:00</span></li>
                     <li className="flex justify-between"><span className="font-medium">Sexta-feira:</span><span>07:00 às 12:00</span></li>
+                    <li className="flex justify-between text-red-500 font-medium pt-2 border-t border-slate-100"><span>Sábado e Domingo:</span><span>Fechado</span></li>
                   </ul>
                 </div>
                 <div className="mt-8 bg-emerald-600 p-6 rounded-2xl text-white shadow-lg">
@@ -226,7 +268,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* RODAPÉ */}
       <footer className="py-12 bg-slate-900 text-slate-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-white font-bold text-lg">Pilates Gabriela Garcia Bezerra</p>
