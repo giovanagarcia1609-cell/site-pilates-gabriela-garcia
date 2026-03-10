@@ -5,8 +5,9 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
-const WHATSAPP_LINK = "https://wa.me/5517981740818?text=Ol%C3%A1%2C%20quero%20agendar%20minha%20aula%20experimental%20no%20est%C3%BAdio%20de%20pilates%20da%20Gabriela%20Garcia%20Bezerra!";
-const PHONE_NUMBER = "(17) 98174-0818";
+// LINK E TELEFONE ATUALIZADOS
+const WHATSAPP_LINK = "https://wa.me/5517981740118?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20no%20est%C3%BAdio%20de%20pilates%20da%20Gabriela%20Garcia!";
+const PHONE_NUMBER = "(17) 98174-0118";
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -81,7 +82,7 @@ export default function App() {
               <div className="relative rounded-[60px] overflow-hidden shadow-2xl border-[12px] border-white bg-slate-100">
                 <img src="/hero.png" alt="Pilates" className="w-full h-auto object-cover" onError={(e) => { (e.target as HTMLImageElement).src = "https://picsum.photos/seed/pilates-hero/1200/800"; }} />
               </div>
-              <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-white p-4 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl border border-slate-100 max-w-[180px] md:max-w-[240px] z-20">
+              <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-white p-4 md:p-8 rounded-[1.5rem] shadow-2xl border border-slate-100 max-w-[180px] md:max-w-[240px] z-20">
                 <div className="flex items-center gap-1 mb-2">
                   {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />)}
                 </div>
@@ -93,7 +94,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* SOBRE A PROFISSIONAL (COM CURSOS COMPLETOS) */}
+      {/* SOBRE A PROFISSIONAL */}
       <section id="sobre" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -165,7 +166,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* DEPOIMENTOS (RESTAURADOS) */}
+      {/* DEPOIMENTOS */}
       <section className="py-24 bg-emerald-900 text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -195,7 +196,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONHEÇA NOSSO ESPAÇO (VÍDEOS E MAPA) */}
+      {/* CONHEÇA NOSSO ESPAÇO */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
