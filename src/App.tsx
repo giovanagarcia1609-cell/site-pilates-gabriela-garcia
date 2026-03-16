@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React, { useState, useEffect } from 'react';
 import { 
   MessageCircle, 
@@ -22,12 +17,10 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+// CONFIGURAÇÕES GLOBAIS
 const WHATSAPP_LINK = "https://wa.me/5517981740118?text=Ol%C3%A1.%20Quero%20agendar%20minha%20aula%20experimental%20no%20pilates%20Gabriela%20Garcia";
 const PHONE_NUMBER = "(17) 98174-0118";
 const ADDRESS = "Rua José Marcelo, 762 - Caparroz, São José do Rio Preto - SP";
-
-const PRIMARY_GREEN = "#2D8A4E"; // Leafy green from logo
-const SECONDARY_GREEN = "#1B5E35"; // Darker shade for contrast
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,7 +51,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <img 
               src="/logo2.png" 
-              alt="Logo Pilates Gabriela Garcia Bezerra" 
+              alt="Logo Pilates Gabriela Garcia" 
               className="h-10 md:h-14 w-auto"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = "https://picsum.photos/seed/pilates-logo/200/200";
@@ -487,12 +480,8 @@ export default function App() {
                       <span className="font-medium">Segunda a Quinta:</span>
                       <span>07:00 às 19:00</span>
                     </li>
-                    <li className="flex justify-between">
-                      <span className="font-medium">Sexta-feira:</span>
-                      <span>07:00 às 12:00</span>
-                    </li>
                     <li className="flex justify-between text-red-500 font-medium pt-2 border-t border-slate-100">
-                      <span>Sábado e Domingo:</span>
+                      <span>Sexta, Sábado e Domingo:</span>
                       <span>Fechado</span>
                     </li>
                   </ul>
